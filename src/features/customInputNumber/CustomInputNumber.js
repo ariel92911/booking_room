@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import "./CustomInputNumber.scss";
 
+CustomInputNumber.defaultProps = {
+  min: 0,
+  max: 4,
+  step: 1,
+  name: "customNum",
+  value: 0,
+  disabled: false,
+};
+
 export default function CustomInputNumber(props) {
   const { min, max, step, name, value, disabled } = props;
   const [defaultValue, setDefaultValue] = useState(value);
