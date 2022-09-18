@@ -11,11 +11,12 @@ CustomInputNumber.defaultProps = {
 };
 
 export default function CustomInputNumber(props) {
-  const { min, max, step, name, value, disabled } = props;
+  const { min, max, step, name, value, disabled, onChange } = props;
   const [defaultValue, setDefaultValue] = useState(value);
 
   const handleChangeNumber = (event) => {
     setDefaultValue(event.target.value);
+    onChange(event);
   };
 
   const handleBlurNumber = (event) => {
